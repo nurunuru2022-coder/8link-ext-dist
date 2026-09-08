@@ -1,4 +1,4 @@
-﻿# ============================================================
+# ============================================================
 # 8LINK 拡張機能セットアップ・ブートストラップ(スタッフPC用)
 # 管理者PowerShellで:
 #   Set-ExecutionPolicy Bypass -Scope Process -Force; irm https://raw.githubusercontent.com/nurunuru2022-coder/8link-ext-dist/main/bootstrap.ps1 | iex
