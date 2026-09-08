@@ -28,7 +28,11 @@ $eap = $ErrorActionPreference; $ErrorActionPreference = "SilentlyContinue"
 & gh auth status *> $null
 $ErrorActionPreference = $eap
 if ($LASTEXITCODE -ne 0) {
-  Write-Host "GitHubにログインします。ブラウザが開いたら nurunuru2022-coder でログインしてください" -ForegroundColor Cyan
+  Write-Host "GitHubにログインします。次の順で操作してください:" -ForegroundColor Cyan
+  Write-Host "  1. 「Authenticate Git ...?」には Y を入力してEnter" -ForegroundColor Cyan
+  Write-Host "  2. 表示されるワンタイムコード(XXXX-XXXX)をメモしてEnter" -ForegroundColor Cyan
+  Write-Host "  3. ブラウザで nurunuru2022-coder でログインしコードを入力(開かない場合は" -ForegroundColor Cyan
+  Write-Host "     https://github.com/login/device を手で開く)" -ForegroundColor Cyan
   gh auth login --hostname github.com --git-protocol https --web
 }
 gh auth setup-git
