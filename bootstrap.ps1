@@ -22,7 +22,11 @@ foreach ($t in @(@{cmd="git";id="Git.Git"}, @{cmd="gh";id="GitHub.cli"})) {
 }
 
 # 2) GitHubログイン(未ログインならブラウザ認証が開く)
-gh auth status 2>$null
+# 注意: PS5.1では未ログイン時のstderr出力が$ErrorActionPreference=Stopと衝突して
+# スクリプトが落ちるため、この判定だけ一時的にエラーを無視して$LASTEXITCODEで見る
+$eap = $ErrorActionPreference; $ErrorActionPreference = "SilentlyContinue"
+& gh auth status *> $null
+$ErrorActionPreference = $eap
 if ($LASTEXITCODE -ne 0) {
   Write-Host "GitHubにログインします。ブラウザが開いたら nurunuru2022-coder でログインしてください" -ForegroundColor Cyan
   gh auth login --hostname github.com --git-protocol https --web
