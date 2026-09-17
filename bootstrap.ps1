@@ -39,7 +39,7 @@ gh auth setup-git
 
 # 3) リポジトリのclone/pull
 New-Item -ItemType Directory -Force C:\dev | Out-Null
-$repos = @("8link-company-os","prista-tool","crossma-tool","selsuma-automation")
+$repos = @("8link-company-os","prista-tool","crossma-tool","selsuma-automation","robotin-tool")
 foreach ($r in $repos) {
   if (Test-Path "C:\dev\$r\.git") {
     git -C "C:\dev\$r" pull --ff-only
