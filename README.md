@@ -11,6 +11,7 @@
 - prista/ … prista-tool
 - crossma/ … crossma-tool
 - selsuma/ … selsuma-automation
+- robotin/ … robotin-tool
 
 (過去にCRX+ExtensionInstallForcelist方式を試したが、非管理PCではChromeが
 ストア外強制インストールをブロックするため2026-09-07にこの方式へ変更)
