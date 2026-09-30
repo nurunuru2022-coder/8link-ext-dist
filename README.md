@@ -2,7 +2,7 @@
 
 社内Chrome拡張の更新シグナル置き場(version.json)。
 各PCの拡張(パッケージ化されていない拡張として C:\dev\<リポ>\extension を読込)が
-1時間ごとにここのversion.jsonを確認し、自分のバージョンと違えばディスクから自動リロードする。
+10分ごとにここのversion.jsonを確認し、自分のバージョンと違えばディスクから自動リロードする。
 ディスク側は各PCのタスクスケジューラ(30分ごとgit pull)が最新化する。
 
 リリースは 8link-company-os/tools/ext-release.ps1 -Name <名前> から(手で編集しない)。
